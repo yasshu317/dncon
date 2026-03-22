@@ -18,7 +18,7 @@ export default function Careers() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {careers.benefits.map((b) => (
               <div key={b} className="flex items-center gap-2 text-sm text-slate-400">
-                <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                 {b}
               </div>
             ))}
@@ -50,7 +50,7 @@ function PositionGroup({
   return (
     <div className={className}>
       <div className="flex items-center gap-2 mb-4">
-        <Briefcase className="w-4 h-4 text-blue-400" />
+        <Briefcase className="w-4 h-4 text-blue-600" />
         <h3 className="text-base font-semibold text-white">{title}</h3>
       </div>
       <div className="space-y-3">
@@ -59,24 +59,24 @@ function PositionGroup({
             <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
               <div>
                 <h4 className="text-sm font-semibold text-white">{pos.title}</h4>
-                <span className="text-xs text-slate-600">ID: {pos.positionId}</span>
+                <span className="text-xs text-slate-500">ID: {pos.positionId}</span>
               </div>
               <div className="flex items-center gap-2 flex-wrap">
                 <span className={`px-2.5 py-1 rounded-full text-xs font-medium ${
                   pos.type === "full-time"
-                    ? "bg-blue-500/10 text-blue-400 border border-blue-500/20"
-                    : "bg-purple-500/10 text-purple-400 border border-purple-500/20"
+                    ? "bg-blue-50 text-blue-600 border border-blue-200"
+                    : "bg-purple-50 text-purple-600 border border-purple-200"
                 }`}>
                   {pos.type === "full-time" ? "Full-Time" : "Contract"}
                 </span>
-                <span className="flex items-center gap-1 text-xs text-slate-500 border border-white/[0.06] rounded-full px-2.5 py-1">
+                <span className="flex items-center gap-1 text-xs text-slate-400 border border-blue-100 rounded-full px-2.5 py-1">
                   <Clock className="w-3 h-3" />{pos.experience}
                 </span>
               </div>
             </div>
             <p className="text-xs text-slate-400 leading-relaxed">{pos.skills}</p>
             {pos.location && (
-              <p className="text-xs text-slate-600 mt-3">{pos.location} · {pos.hoursPerWeek} hrs/week</p>
+              <p className="text-xs text-slate-500 mt-3">{pos.location} · {pos.hoursPerWeek} hrs/week</p>
             )}
           </div>
         ))}

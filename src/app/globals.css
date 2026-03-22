@@ -1,64 +1,60 @@
 @import "tailwindcss";
 
 :root {
-  --bg-base:    #080d1a;
-  --bg-surface: #0e1525;
-  --bg-card:    #121d33;
-  --border:     rgba(255, 255, 255, 0.07);
-  --border-hover: rgba(99, 160, 255, 0.3);
-  --blue:       #3b82f6;
-  --blue-dim:   rgba(59, 130, 246, 0.12);
-  --text-primary:   #f1f5f9;
-  --text-secondary: #94a3b8;
-  --text-muted:     #475569;
+  --bg-base:       #f0f4ff;
+  --bg-surface:    #e8eeff;
+  --bg-card:       #ffffff;
+  --border:        rgba(59, 130, 246, 0.14);
+  --border-hover:  rgba(59, 130, 246, 0.45);
+  --blue:          #3b82f6;
+  --blue-dark:     #2563eb;
+  --blue-dim:      rgba(59, 130, 246, 0.08);
+  --text-primary:  #0f172a;
+  --text-secondary:#475569;
+  --text-muted:    #94a3b8;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
-  background-color: var(--bg-base);
+  background: linear-gradient(135deg, #eef2ff 0%, #f0f7ff 40%, #f5f0ff 100%);
+  background-attachment: fixed;
   color: var(--text-primary);
   font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
-/* ── Subtle dot-grid background ─────────────────────────── */
-.dot-bg {
-  background-color: var(--bg-base);
-  background-image: radial-gradient(
-    circle,
-    rgba(59, 130, 246, 0.08) 1px,
-    transparent 1px
-  );
-  background-size: 28px 28px;
-}
-
-/* ── Clean card ─────────────────────────────────────────── */
+/* ── Clean card (light) ─────────────────────────────────── */
 .card {
-  background: var(--bg-card);
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border);
-  border-radius: 0.875rem;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  border-radius: 14px;
+  box-shadow: 0 1px 3px rgba(59, 130, 246, 0.06), 0 4px 16px rgba(99, 102, 241, 0.05);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .card:hover {
   border-color: var(--border-hover);
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.12);
 }
 
-/* ── Surface (slightly lighter than base) ───────────────── */
+/* ── Surface ────────────────────────────────────────────── */
 .surface {
-  background-color: var(--bg-surface);
+  background: rgba(238, 242, 255, 0.6);
+  backdrop-filter: blur(8px);
 }
 
 /* ── Gradient text ──────────────────────────────────────── */
 .gradient-text {
-  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* ── Accent badge ───────────────────────────────────────── */
+/* ── Badge ──────────────────────────────────────────────── */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -69,21 +65,15 @@ body {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  background: var(--blue-dim);
-  border: 1px solid rgba(59, 130, 246, 0.2);
-  color: #93c5fd;
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.22);
+  color: #2563eb;
 }
 
 /* ── Section divider ────────────────────────────────────── */
 .divider {
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(59, 130, 246, 0.2),
-    transparent
-  );
-  margin: 0;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.2), transparent);
 }
 
 /* ── Primary button ─────────────────────────────────────── */
@@ -93,16 +83,18 @@ body {
   gap: 8px;
   padding: 12px 28px;
   border-radius: 10px;
-  background: var(--blue);
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
   color: #fff;
   font-weight: 600;
   font-size: 0.95rem;
-  transition: background 0.2s ease, transform 0.15s ease;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35);
+  transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
 }
 
 .btn-primary:hover {
-  background: #2563eb;
+  opacity: 0.92;
   transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.45);
 }
 
 /* ── Ghost button ───────────────────────────────────────── */
@@ -112,37 +104,39 @@ body {
   gap: 8px;
   padding: 12px 28px;
   border-radius: 10px;
-  border: 1px solid var(--border-hover);
-  color: #93c5fd;
+  border: 1.5px solid rgba(59, 130, 246, 0.35);
+  color: #3b82f6;
   font-weight: 600;
   font-size: 0.95rem;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  background: rgba(59, 130, 246, 0.04);
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
 }
 
 .btn-ghost:hover {
-  background: var(--blue-dim);
+  background: rgba(59, 130, 246, 0.1);
   border-color: var(--blue);
+  transform: translateY(-1px);
 }
 
 /* ── Tech pill ──────────────────────────────────────────── */
 .tech-pill {
   display: inline-block;
-  padding: 4px 10px;
+  padding: 3px 10px;
   border-radius: 6px;
   font-size: 0.72rem;
   font-weight: 500;
-  color: #94a3b8;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  transition: color 0.2s, border-color 0.2s;
+  color: #3b4f7c;
+  background: rgba(59, 130, 246, 0.07);
+  border: 1px solid rgba(59, 130, 246, 0.15);
+  transition: background 0.2s, border-color 0.2s;
 }
 
 .tech-pill:hover {
-  color: #93c5fd;
-  border-color: rgba(99, 160, 255, 0.25);
+  background: rgba(59, 130, 246, 0.14);
+  border-color: rgba(59, 130, 246, 0.3);
 }
 
 /* ── Scrollbar ──────────────────────────────────────────── */
 ::-webkit-scrollbar       { width: 5px; }
-::-webkit-scrollbar-track { background: var(--bg-base); }
-::-webkit-scrollbar-thumb { background: rgba(59, 130, 246, 0.3); border-radius: 3px; }
+::-webkit-scrollbar-track { background: #f0f4ff; }
+::-webkit-scrollbar-thumb { background: rgba(59, 130, 246, 0.25); border-radius: 3px; }

@@ -21,12 +21,12 @@ export default function Products() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white">{product.name}</h3>
-                  <p className="text-sm text-blue-400">{product.tagline}</p>
+                  <p className="text-sm text-blue-600">{product.tagline}</p>
                 </div>
               </div>
               <p className="text-sm text-slate-400 leading-relaxed mb-6">{product.description}</p>
               <div>
-                <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-3">Key Modules</p>
+                <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Key Modules</p>
                 <ul className="grid grid-cols-2 gap-2">
                   {product.features.map((f) => (
                     <li key={f} className="flex items-center gap-2 text-xs text-slate-400">

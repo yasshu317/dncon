@@ -33,8 +33,8 @@ export default function Partners() {
                 </ul>
               )}
               {partner.contact && (
-                <div className="flex items-start gap-2 text-xs text-slate-500 pt-4 border-t border-white/[0.05]">
-                  <Mail className="w-3.5 h-3.5 text-blue-400 mt-0.5 shrink-0" />
+                <div className="flex items-start gap-2 text-xs text-slate-400 pt-4 border-t border-blue-100/50">
+                  <Mail className="w-3.5 h-3.5 text-blue-600 mt-0.5 shrink-0" />
                   {partner.contact}
                 </div>
               )}

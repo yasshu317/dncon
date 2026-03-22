@@ -23,8 +23,8 @@ export default function TechStack() {
               data-testid={`tech-category-${cat.category.toLowerCase().replace(/[\s&/]+/g, "-")}`}
             >
               <div className="flex items-center gap-3 mb-5">
-                <div className="w-9 h-9 rounded-lg bg-blue-600/15 border border-blue-500/20 flex items-center justify-center shrink-0">
-                  <IconResolver name={cat.icon} className="w-4 h-4 text-blue-400" />
+                <div className="w-9 h-9 rounded-lg bg-blue-100 border border-blue-200 flex items-center justify-center shrink-0">
+                  <IconResolver name={cat.icon} className="w-4 h-4 text-blue-600" />
                 </div>
                 <h3 className="text-sm font-semibold text-white">{cat.category}</h3>
               </div>
@@ -82,9 +82,9 @@ export default function TechStack() {
                 { name: "Azure", desc: "AKS · Functions · DevOps" },
                 { name: "GCP", desc: "GKE · Cloud Run · BigQuery" },
               ].map((cloud) => (
-                <div key={cloud.name} className="rounded-lg bg-white/[0.03] border border-white/[0.06] p-3 text-center">
+                <div key={cloud.name} className="rounded-lg bg-white/70 border border-blue-100 p-3 text-center">
                   <p className="text-white font-bold text-sm">{cloud.name}</p>
-                  <p className="text-slate-500 text-[11px] mt-1 leading-tight">{cloud.desc}</p>
+                  <p className="text-slate-400 text-[11px] mt-1 leading-tight">{cloud.desc}</p>
                 </div>
               ))}
             </div>

@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { MapPin, Phone, Mail, Zap } from "lucide-react";
+import { MapPin, Phone, Mail } from "lucide-react";
+import LogoIcon from "@/components/ui/LogoIcon";
 import { siteConfig } from "@/config/site.config";
 
 export default function Footer() {
@@ -7,19 +8,17 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-white/[0.06]" data-testid="footer">
+    <footer className="bg-slate-900 border-t border-slate-800" data-testid="footer">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
 
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
-                <Zap className="w-4 h-4 text-white" />
-              </div>
+              <LogoIcon size={32} />
               <span className="text-[15px] font-bold text-white">{company.logoText}</span>
             </div>
-            <p className="text-sm text-slate-500 leading-relaxed">{company.tagline}</p>
+            <p className="text-sm text-slate-400 leading-relaxed">{company.tagline}</p>
             <p className="text-xs text-slate-600">Est. {company.founded}</p>
           </div>
 
@@ -29,7 +28,7 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {navigation.filter((n) => n.label !== "Home").slice(0, 6).map((item) => (
                 <li key={item.label}>
-                  <Link href={item.href} className="text-sm text-slate-500 hover:text-slate-300 transition-colors">
+                  <Link href={item.href} className="text-sm text-slate-500 hover:text-slate-200 transition-colors">
                     {item.label}
                   </Link>
                 </li>
@@ -43,7 +42,7 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {services.slice(0, 5).map((s) => (
                 <li key={s.id}>
-                  <Link href={`/services#${s.id}`} className="text-sm text-slate-500 hover:text-slate-300 transition-colors">
+                  <Link href={`/services#${s.id}`} className="text-sm text-slate-500 hover:text-slate-200 transition-colors">
                     {s.title}
                   </Link>
                 </li>
@@ -66,7 +65,7 @@ export default function Footer() {
               {Object.entries(company.contact.emails).slice(0, 2).map(([label, email]) => (
                 <li key={label} className="flex items-center gap-2.5">
                   <Mail className="w-4 h-4 text-slate-600 shrink-0" />
-                  <a href={`mailto:${email}`} className="text-sm text-slate-500 hover:text-slate-300 transition-colors truncate">
+                  <a href={`mailto:${email}`} className="text-sm text-slate-500 hover:text-slate-200 transition-colors truncate">
                     {email}
                   </a>
                 </li>
@@ -75,7 +74,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="h-px bg-white/[0.05] my-10" />
+        <div className="h-px bg-slate-800 my-10" />
 
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-600">
           <span>© {year} {company.name}. All rights reserved.</span>

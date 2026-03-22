@@ -13,12 +13,12 @@ export default function About() {
 
         <div className="grid lg:grid-cols-2 gap-8 mb-14">
           <div className="card p-8">
-            <p className="text-xs font-semibold text-blue-400 uppercase tracking-widest mb-3">Mission</p>
-            <p className="text-slate-300 leading-relaxed">{about.mission}</p>
+            <p className="text-xs font-semibold text-blue-600 uppercase tracking-widest mb-3">Mission</p>
+            <p className="text-slate-500 leading-relaxed">{about.mission}</p>
           </div>
           <div className="card p-8">
-            <p className="text-xs font-semibold text-purple-400 uppercase tracking-widest mb-3">Vision</p>
-            <p className="text-slate-300 leading-relaxed">{about.vision}</p>
+            <p className="text-xs font-semibold text-purple-600 uppercase tracking-widest mb-3">Vision</p>
+            <p className="text-slate-500 leading-relaxed">{about.vision}</p>
           </div>
         </div>
 
@@ -48,11 +48,11 @@ export default function About() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5" data-testid="about-highlights">
           {about.highlights.map((h) => (
             <div key={h.title} className="card p-6">
-              <div className="w-10 h-10 rounded-lg bg-blue-600/15 border border-blue-500/20 flex items-center justify-center mb-4">
-                <IconResolver name={h.icon} className="w-5 h-5 text-blue-400" />
+              <div className="w-10 h-10 rounded-lg bg-blue-100 border border-blue-200 flex items-center justify-center mb-4">
+                <IconResolver name={h.icon} className="w-5 h-5 text-blue-600" />
               </div>
               <h4 className="text-sm font-semibold text-white mb-2">{h.title}</h4>
-              <p className="text-xs text-slate-500 leading-relaxed">{h.description}</p>
+              <p className="text-xs text-slate-400 leading-relaxed">{h.description}</p>
             </div>
           ))}
         </div>
