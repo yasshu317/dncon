@@ -137,6 +137,47 @@ body {
   border-color: rgba(249, 115, 22, 0.3);
 }
 
+/* ── Hero section ───────────────────────────────────────── */
+/* Background image is injected via inline style in Hero.tsx */
+.hero-section {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Ghost / outline button for dark hero background */
+.hero-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: 10px;
+  border: 2px solid rgba(249, 115, 22, 0.55);
+  color: #f97316;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: rgba(249, 115, 22, 0.06);
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+}
+.hero-btn-outline:hover {
+  background: rgba(249, 115, 22, 0.15);
+  border-color: #f97316;
+  transform: translateY(-1px);
+}
+
+/* Floating animation for hero image */
+@keyframes float {
+  0%   { transform: translateY(0px); }
+  50%  { transform: translateY(-18px); }
+  100% { transform: translateY(0px); }
+}
+.hero-float-img {
+  animation: float 6s ease-in-out infinite;
+  filter: drop-shadow(0 20px 40px rgba(249, 115, 22, 0.25));
+}
+
 /* ── Scrollbar ──────────────────────────────────────────── */
 ::-webkit-scrollbar       { width: 5px; }
 ::-webkit-scrollbar-track { background: #fff8f0; }

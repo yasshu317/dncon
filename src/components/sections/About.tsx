@@ -28,6 +28,7 @@ export default function About() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={assetPath("/images/about-team.jpg")}
+              style={{ objectPosition: "top center" }}
                 alt="DBCON INC team collaborating"
                 className="w-full h-72 lg:h-96 object-cover"
               />
