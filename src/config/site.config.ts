@@ -16,7 +16,7 @@ export const siteConfig: SiteConfig = {
     tagline: "Information Technology Solutions",
     description:
       "An international Information Technology company providing consulting and outsourcing solutions to Fortune 1000 companies with the latest technology available in the market.",
-    founded: "1995",
+    founded: "Late 1995",
     logoText: "DBCON INC",
     contact: {
       address: "1 Tara Blvd, Suite #LL7, Nashua, NH 03062",
@@ -99,7 +99,7 @@ export const siteConfig: SiteConfig = {
   // ── Hero Section ──────────────────────────────────────────
   hero: {
     headline: "Powering Enterprise IT",
-    subheadline: "Since 1995",
+    subheadline: "Since Late 1995",
     description:
       "We deliver consulting, outsourcing, and software solutions that keep Fortune 1000 enterprises running at the cutting edge. From ERP to e-commerce, from architecture to deployment — we've got you covered.",
     ctaPrimary: { label: "Explore Solutions", href: "/solutions" },
@@ -115,7 +115,7 @@ export const siteConfig: SiteConfig = {
   // ── About ─────────────────────────────────────────────────
   about: {
     summary:
-      "DBCON INC is a privately held software products development and consulting/outsourcing services company started by a team of highly motivated software engineers with a vision to provide cost-effective solutions.",
+      "DBCON INC is a privately held software products development and consulting/outsourcing services company started and managed by a team of young, highly motivated software engineers with a vision to provide cost-effective solutions. From our inception as a small company in the late 1995, we have been innovative about how we work and what we develop.",
     mission:
       "To develop and extend software solutions from a business viewpoint by collaborating with businesses, IT executives, and solution providers — delivering measurable value at every engagement.",
     vision:
