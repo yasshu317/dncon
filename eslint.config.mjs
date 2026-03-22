@@ -5,13 +5,17 @@ import nextTs from "eslint-config-next/typescript";
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
-  // Override default ignores of eslint-config-next.
   globalIgnores([
-    // Default ignores of eslint-config-next:
+    // Next.js build artifacts
     ".next/**",
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Test coverage output (generated, not source)
+    "coverage/**",
+    // Jest config uses CommonJS require() — exclude from TS import rules
+    "jest.config.js",
+    "jest.setup.ts",
   ]),
 ]);
 
