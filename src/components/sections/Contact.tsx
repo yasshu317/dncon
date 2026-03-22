@@ -13,7 +13,7 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("sending");
-    await new Promise((r) => setTimeout(r, 1000));
+    await new Promise((r) => setTimeout(r, process.env.NODE_ENV === "test" ? 0 : 1000));
     setStatus("sent");
   };
 
