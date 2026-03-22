@@ -25,7 +25,7 @@ export default function Clients() {
         </div>
 
         <div className="card p-10 text-center max-w-2xl mx-auto">
-          <h3 className="text-xl font-bold text-white mb-2">Ready to work together?</h3>
+          <h3 className="text-xl font-bold text-slate-800 mb-2">Ready to work together?</h3>
           <p className="text-slate-400 text-sm mb-6">
             Let's discuss how we can transform your IT operations.
           </p>

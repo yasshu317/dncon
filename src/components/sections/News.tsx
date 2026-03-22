@@ -12,7 +12,7 @@ export default function News() {
           <div className="lg:col-span-2 space-y-5">
             <div className="flex items-center gap-2 mb-2">
               <Newspaper className="w-4 h-4 text-orange-600" />
-              <span className="text-sm font-semibold text-white">News</span>
+              <span className="text-sm font-semibold text-slate-800">News</span>
             </div>
             {siteConfig.news.map((item) => (
               <div key={item.id} className="card p-7" data-testid={`news-item-${item.id}`}>
@@ -21,7 +21,7 @@ export default function News() {
                   {new Date(item.date).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
                   <span className="badge py-0.5 px-2">{item.type}</span>
                 </div>
-                <h4 className="text-base font-semibold text-white mb-2">{item.title}</h4>
+                <h4 className="text-base font-semibold text-slate-800 mb-2">{item.title}</h4>
                 <p className="text-sm text-slate-400 leading-relaxed">{item.summary}</p>
               </div>
             ))}
@@ -30,7 +30,7 @@ export default function News() {
           <div>
             <div className="flex items-center gap-2 mb-5">
               <CalendarDays className="w-4 h-4 text-orange-600" />
-              <span className="text-sm font-semibold text-white">Upcoming Seminars</span>
+              <span className="text-sm font-semibold text-slate-800">Upcoming Seminars</span>
             </div>
             <div className="card p-6">
               <p className="text-xs text-slate-400 mb-5">Free seminars at our premises on IT topics:</p>

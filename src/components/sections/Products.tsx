@@ -20,7 +20,7 @@ export default function Products() {
                   <Package className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white">{product.name}</h3>
+                  <h3 className="text-xl font-bold text-slate-800">{product.name}</h3>
                   <p className="text-sm text-orange-600">{product.tagline}</p>
                 </div>
               </div>

@@ -20,7 +20,7 @@ export default function Partners() {
               className="card p-8"
               data-testid={`partner-${partner.category.toLowerCase().replace(/\s+/g, "-")}`}
             >
-              <h3 className="text-base font-semibold text-white mb-2">{partner.category}</h3>
+              <h3 className="text-base font-semibold text-slate-800 mb-2">{partner.category}</h3>
               <p className="text-sm text-slate-400 leading-relaxed mb-5">{partner.description}</p>
               {partner.areas && (
                 <ul className="space-y-2 mb-5">

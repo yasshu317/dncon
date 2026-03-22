@@ -45,12 +45,12 @@ export default function Contact() {
             {status === "sent" ? (
               <div className="h-full flex flex-col items-center justify-center text-center py-10">
                 <CheckCircle2 className="w-12 h-12 text-emerald-600 mb-4" />
-                <h3 className="text-lg font-bold text-white mb-2">Message Sent!</h3>
+                <h3 className="text-lg font-bold text-slate-800 mb-2">Message Sent!</h3>
                 <p className="text-slate-400 text-sm">We'll get back to you shortly.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-5">
-                <p className="text-sm font-semibold text-white mb-6">Send a Message</p>
+                <p className="text-sm font-semibold text-slate-800 mb-6">Send a Message</p>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <Field id="name" label="Your Name" value={form.name} onChange={(v) => setForm({ ...form, name: v })} required />
                   <Field id="email" label="Email Address" type="email" value={form.email} onChange={(v) => setForm({ ...form, email: v })} required />

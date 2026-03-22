@@ -26,7 +26,7 @@ export default function TechStack() {
                 <div className="w-9 h-9 rounded-lg bg-orange-100 border border-orange-200 flex items-center justify-center shrink-0">
                   <IconResolver name={cat.icon} className="w-4 h-4 text-orange-600" />
                 </div>
-                <h3 className="text-sm font-semibold text-white">{cat.category}</h3>
+                <h3 className="text-sm font-semibold text-slate-800">{cat.category}</h3>
               </div>
               <div className="flex flex-wrap gap-1.5">
                 {cat.technologies.map((tech) => (
@@ -45,7 +45,7 @@ export default function TechStack() {
               <span className="w-1.5 h-1.5 rounded-full bg-red-400" />
               Ruby on Rails
             </div>
-            <h3 className="text-xl font-bold text-white mb-3">Convention-over-Configuration</h3>
+            <h3 className="text-xl font-bold text-slate-800 mb-3">Convention-over-Configuration</h3>
             <p className="text-sm text-slate-400 leading-relaxed mb-5">
               Rapid, production-grade web applications leveraging Rails' full-stack power — ActiveRecord ORM, Action Cable, Hotwire/Turbo for modern UX without complexity.
             </p>
@@ -72,7 +72,7 @@ export default function TechStack() {
               <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
               Cloud-Native 2026
             </div>
-            <h3 className="text-xl font-bold text-white mb-3">Multi-Cloud & Serverless</h3>
+            <h3 className="text-xl font-bold text-slate-800 mb-3">Multi-Cloud & Serverless</h3>
             <p className="text-sm text-slate-400 leading-relaxed mb-5">
               AWS, Azure, and GCP architectures using Kubernetes, Terraform, and GitOps — scalable, secure, and cost-efficient by design.
             </p>
@@ -83,7 +83,7 @@ export default function TechStack() {
                 { name: "GCP", desc: "GKE · Cloud Run · BigQuery" },
               ].map((cloud) => (
                 <div key={cloud.name} className="rounded-lg bg-white/70 border border-orange-100 p-3 text-center">
-                  <p className="text-white font-bold text-sm">{cloud.name}</p>
+                  <p className="text-slate-800 font-bold text-sm">{cloud.name}</p>
                   <p className="text-slate-400 text-[11px] mt-1 leading-tight">{cloud.desc}</p>
                 </div>
               ))}

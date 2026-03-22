@@ -14,7 +14,7 @@ export default function Careers() {
 
         {/* Benefits */}
         <div className="card p-8 mb-10">
-          <p className="text-sm font-semibold text-white mb-5">Benefits & Culture</p>
+          <p className="text-sm font-semibold text-slate-800 mb-5">Benefits & Culture</p>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {careers.benefits.map((b) => (
               <div key={b} className="flex items-center gap-2 text-sm text-slate-400">
@@ -29,7 +29,7 @@ export default function Careers() {
         <PositionGroup title="Contract Positions" positions={contract} className="mt-8" />
 
         <div className="mt-8 card p-8 text-center">
-          <p className="text-sm font-semibold text-white mb-2">How to Apply</p>
+          <p className="text-sm font-semibold text-slate-800 mb-2">How to Apply</p>
           <p className="text-xs text-slate-400">{careers.applyInfo}</p>
         </div>
       </div>
@@ -51,14 +51,14 @@ function PositionGroup({
     <div className={className}>
       <div className="flex items-center gap-2 mb-4">
         <Briefcase className="w-4 h-4 text-orange-600" />
-        <h3 className="text-base font-semibold text-white">{title}</h3>
+        <h3 className="text-base font-semibold text-slate-800">{title}</h3>
       </div>
       <div className="space-y-3">
         {positions.map((pos) => (
           <div key={pos.id} className="card p-6" data-testid={`job-${pos.positionId}`}>
             <div className="flex flex-wrap items-start justify-between gap-3 mb-3">
               <div>
-                <h4 className="text-sm font-semibold text-white">{pos.title}</h4>
+                <h4 className="text-sm font-semibold text-slate-800">{pos.title}</h4>
                 <span className="text-xs text-slate-500">ID: {pos.positionId}</span>
               </div>
               <div className="flex items-center gap-2 flex-wrap">
