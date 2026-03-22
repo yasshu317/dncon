@@ -12,24 +12,35 @@ export default function Clients() {
           description="Delivering solutions for some of the world's most recognized enterprises."
         />
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 mb-14">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mb-16">
           {siteConfig.clients.map((client) => (
             <div
               key={client}
-              className="card px-4 py-4 flex items-center justify-center text-center"
+              className="client-tile"
               data-testid={`client-${client.toLowerCase().replace(/\s+/g, "-")}`}
             >
-              <span className="text-sm text-slate-400 font-medium">{client}</span>
+              <span className="text-sm text-slate-600 font-semibold text-center leading-tight">{client}</span>
             </div>
           ))}
         </div>
 
-        <div className="card p-10 text-center max-w-2xl mx-auto">
-          <h3 className="text-xl font-bold text-slate-800 mb-2">Ready to work together?</h3>
-          <p className="text-slate-400 text-sm mb-6">
-            Let's discuss how we can transform your IT operations.
+        {/* CTA banner */}
+        <div
+          className="relative rounded-2xl overflow-hidden p-10 text-center"
+          style={{
+            background: "linear-gradient(135deg, #1a0800 0%, #2d1000 50%, #1a0500 100%)",
+            boxShadow: "0 20px 60px rgba(249,115,22,0.20)",
+          }}
+        >
+          {/* Glow circle */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-96 h-32 bg-orange-500/10 rounded-full blur-3xl pointer-events-none" />
+          <h3 className="text-2xl font-black text-white mb-3 relative" style={{ fontFamily: "'Raleway', sans-serif" }}>
+            Ready to work together?
+          </h3>
+          <p className="text-white/60 text-sm mb-7 relative">
+            Let&apos;s discuss how we can transform your IT operations.
           </p>
-          <a href="/contact" className="btn-primary inline-flex mx-auto">
+          <a href="/contact" className="btn-primary inline-flex relative">
             Start a Conversation
           </a>
         </div>

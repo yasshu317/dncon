@@ -47,7 +47,7 @@ export default function TechStack() {
             </div>
             <h3 className="text-xl font-bold text-slate-800 mb-3">Convention-over-Configuration</h3>
             <p className="text-sm text-slate-400 leading-relaxed mb-5">
-              Rapid, production-grade web applications leveraging Rails' full-stack power — ActiveRecord ORM, Action Cable, Hotwire/Turbo for modern UX without complexity.
+              Rapid, production-grade web applications leveraging Rails&apos; full-stack power — ActiveRecord ORM, Action Cable, Hotwire/Turbo for modern UX without complexity.
             </p>
             <ul className="space-y-2">
               {[

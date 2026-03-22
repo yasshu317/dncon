@@ -54,7 +54,7 @@ export default function About() {
             { value: "5", label: "Outsourcing Models" },
             { value: "100%", label: "Client Commitment" },
           ].map((stat) => (
-            <div key={stat.label} className="card px-4 py-6 text-center">
+            <div key={stat.label} className="stat-card">
               <div className="text-3xl font-black gradient-text mb-1">{stat.value}</div>
               <div className="text-xs text-slate-500 font-medium">{stat.label}</div>
             </div>
