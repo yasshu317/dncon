@@ -1,4 +1,3 @@
-import Image from "next/image";
 import SectionTitle from "@/components/ui/SectionTitle";
 import IconResolver from "@/components/ui/IconResolver";
 import { siteConfig } from "@/config/site.config";
@@ -25,16 +24,13 @@ export default function About() {
           {/* Image */}
           <div className="order-1 lg:order-2 relative">
             <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-orange-200/40">
-              <Image
-                src="/images/about-team.jpg"
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="images/about-team.jpg"
                 alt="DBCON INC team collaborating"
-                width={600}
-                height={420}
                 className="w-full h-72 lg:h-96 object-cover"
-                unoptimized
               />
-              {/* Orange tint overlay */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-orange-900/20 via-transparent to-amber-500/10" />
+              <div className="absolute inset-0 bg-gradient-to-tr from-orange-900/20 via-transparent to-amber-500/10 pointer-events-none" />
             </div>
             {/* Floating badge */}
             <div className="absolute -bottom-4 -left-4 bg-white rounded-xl px-5 py-3 shadow-lg shadow-orange-100/80 border border-orange-100">

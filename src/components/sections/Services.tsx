@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import SectionTitle from "@/components/ui/SectionTitle";
@@ -21,13 +20,11 @@ export default function Services({ preview = false }: { preview?: boolean }) {
         {/* Split image + intro */}
         <div className="grid lg:grid-cols-5 gap-8 items-center mb-14">
           <div className="lg:col-span-2 relative rounded-2xl overflow-hidden shadow-xl shadow-orange-100/40">
-            <Image
-              src="/images/it-professional.jpg"
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="images/it-professional.jpg"
               alt="IT professional at work"
-              width={500}
-              height={380}
               className="w-full h-64 lg:h-80 object-cover object-center"
-              unoptimized
             />
             <div className="absolute inset-0 bg-gradient-to-t from-orange-950/40 via-transparent to-transparent" />
             <div className="absolute bottom-4 left-4 right-4">

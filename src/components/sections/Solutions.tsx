@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import SectionTitle from "@/components/ui/SectionTitle";
@@ -20,13 +19,11 @@ export default function Solutions({ preview = false }: { preview?: boolean }) {
 
         {/* Decorative image banner */}
         <div className="relative rounded-2xl overflow-hidden mb-12 shadow-xl shadow-orange-100/50">
-          <Image
-            src="/images/server-room.jpg"
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="images/server-room.jpg"
             alt="Infrastructure and cloud solutions"
-            width={1200}
-            height={320}
             className="w-full h-52 object-cover object-center"
-            unoptimized
           />
           <div className="absolute inset-0 bg-gradient-to-r from-orange-950/75 via-stone-900/55 to-transparent flex items-center px-10">
             <div>
