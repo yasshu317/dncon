@@ -116,10 +116,34 @@ export const siteConfig: SiteConfig = {
   about: {
     summary:
       "DBCON INC is a privately held software products development and consulting/outsourcing services company started and managed by a team of young, highly motivated software engineers with a vision to provide cost-effective solutions. From our inception as a small company in the late 1995, we have been innovative about how we work and what we develop.",
+    additionalParagraphs: [
+      "The company continues to devote substantial human and financial resources to its development, services, and support activities.",
+      "Our success lies in our customer's and partner's satisfaction and success, combined with our employee's enthusiasm and growth.",
+    ],
     mission:
       "To develop and extend software solutions from a business viewpoint by collaborating with businesses, IT executives, and solution providers — delivering measurable value at every engagement.",
     vision:
       "To be the partner of choice for enterprises seeking reliable, innovative, and cost-effective IT solutions that transform operations and accelerate growth.",
+    whatWeDo: [
+      {
+        icon: "Code2",
+        title: "Software Products Development",
+        description:
+          "Building innovative and scalable software products tailored to business needs.",
+      },
+      {
+        icon: "Users",
+        title: "Software Consulting Services",
+        description:
+          "Expert consulting to optimize IT systems and align technology with business strategy.",
+      },
+      {
+        icon: "Globe",
+        title: "Outsourcing & Turnkey Projects",
+        description:
+          "End-to-end outsourcing and complete turnkey solutions delivered on time and within budget.",
+      },
+    ],
     highlights: [
       {
         icon: "Cpu",

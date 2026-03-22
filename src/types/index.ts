@@ -98,8 +98,10 @@ export interface SiteConfig {
   hero: HeroConfig;
   about: {
     summary: string;
+    additionalParagraphs: string[];
     mission: string;
     vision: string;
+    whatWeDo: { icon: string; title: string; description: string }[];
     highlights: { icon: string; title: string; description: string }[];
   };
   solutions: Solution[];
