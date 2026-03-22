@@ -1,0 +1,69 @@
+---
+description: Core rules for BizPresence Pro — corporate site template for DBCON INC
+globs: ["**/*.ts", "**/*.tsx", "**/*.css"]
+alwaysApply: true
+---
+
+# BizPresence Pro — Cursor Rules
+
+## Project Purpose
+This is a config-driven corporate website template for DBCON INC.
+All company content lives in `src/config/site.config.ts` — no hardcoding in components.
+
+## Stack
+- Next.js 16 (App Router, static export)
+- TypeScript 5
+- Tailwind CSS v4
+- Lucide React icons
+- Jest + React Testing Library
+
+## Code Style
+- Use TypeScript strictly — no `any`, no implicit types
+- Functional components only — no class components
+- Export default for page/section components
+- Named exports for utilities and types
+- Props interfaces defined inline or in `src/types/index.ts`
+- Keep components focused — one responsibility per file
+
+## Content Rules
+- NEVER hardcode company name, contact, or content in components
+- All text content must come from `siteConfig` imported from `@/config/site.config`
+- To change company: edit `site.config.ts` only
+
+## Styling Rules
+- Use utility classes defined in `globals.css` first:
+  - `.card` — standard dark card with subtle border
+  - `.badge` — pill label for section headings
+  - `.btn-primary` — solid blue CTA button
+  - `.btn-ghost` — outline CTA button
+  - `.tech-pill` — small technology tag
+  - `.surface` — slightly lighter background section
+  - `.divider` — horizontal gradient line
+  - `.gradient-text` — blue-purple gradient text
+- Avoid inline `style={{}}` except for dynamic color values
+- No heavy glow effects or stacked gradients — keep it clean
+
+## File Structure
+```
+src/
+  app/           → Next.js pages (thin wrappers)
+  components/
+    layout/      → Header, Footer
+    sections/    → Page section components
+    ui/          → Reusable primitives
+  config/        → site.config.ts (all content)
+  types/         → TypeScript interfaces
+__tests__/       → Jest tests mirroring src structure
+```
+
+## Testing
+- Every section component must have a corresponding test file
+- Use `data-testid` attributes for test targeting
+- Tests import from `@/config/site.config` to stay config-driven
+- Run: `npm test` before committing
+
+## Deployment
+- `npm run build` → generates `out/` folder (static HTML)
+- `npm run deploy` → pushes `out/` to `gh-pages` branch
+- GitHub Actions auto-deploys on push to `main`
+- Live URL: https://yasshu317.github.io/dncon/

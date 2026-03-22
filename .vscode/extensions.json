@@ -1,0 +1,37 @@
+{
+  "recommendations": [
+    // ── Core ────────────────────────────────────────────────
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "bradlc.vscode-tailwindcss",
+
+    // ── TypeScript / React ───────────────────────────────────
+    "dsznajder.es7-react-js-snippets",
+    "ms-vscode.vscode-typescript-next",
+    "formulahendry.auto-rename-tag",
+    "christian-kohler.path-intellisense",
+
+    // ── Git ──────────────────────────────────────────────────
+    "eamodio.gitlens",
+    "mhutchie.git-graph",
+
+    // ── AI Assistants ────────────────────────────────────────
+    "github.copilot",
+    "github.copilot-chat",
+    "anthropic.claude-vscode",
+
+    // ── Testing ──────────────────────────────────────────────
+    "orta.vscode-jest",
+    "ms-vscode.test-adapter-converter",
+
+    // ── Productivity ─────────────────────────────────────────
+    "streetsidesoftware.code-spell-checker",
+    "gruntfuggly.todo-tree",
+    "wayou.vscode-todo-highlight",
+    "ms-vsliveshare.vsliveshare",
+
+    // ── Theme / Appearance ───────────────────────────────────
+    "pkief.material-icon-theme",
+    "GitHub.github-vscode-theme"
+  ]
+}

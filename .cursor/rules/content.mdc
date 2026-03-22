@@ -1,0 +1,61 @@
+---
+description: Content and copy rules — how to update site content
+globs: ["src/config/site.config.ts"]
+alwaysApply: false
+---
+
+# Content Update Rules
+
+## The Golden Rule
+**All content changes go to `src/config/site.config.ts` only.**
+
+## Sections and Their Config Keys
+
+| Page / Section  | Config key              |
+|-----------------|-------------------------|
+| Header logo     | `company.logoText`      |
+| Hero headline   | `hero.headline`         |
+| Hero stats      | `hero.stats[]`          |
+| About           | `about.summary/mission/vision/highlights` |
+| Solutions       | `solutions[]`           |
+| Tech Stack      | `techStack[]`           |
+| Services        | `services[]`            |
+| Products        | `products[]`            |
+| Careers         | `careers.positions[]`   |
+| Partners        | `partners.categories[]` |
+| Clients list    | `clients[]`             |
+| News            | `news[]`                |
+| Events          | `events[]`              |
+| Contact details | `company.contact`       |
+| SEO metadata    | `seo`                   |
+| Navigation      | `navigation[]`          |
+
+## Adding a New Service
+```ts
+{
+  id: "unique-id",          // used for anchor links /services#unique-id
+  title: "Service Name",
+  icon: "IconName",         // must exist in src/components/ui/IconResolver.tsx
+  summary: "One line.",
+  description: "Full paragraph.",
+  technologies: ["Tech1", "Tech2"],  // optional
+}
+```
+
+## Adding a New Tech Category
+```ts
+{
+  category: "Category Name",
+  icon: "IconName",
+  color: "from-blue-500/20 to-cyan-500/20",
+  technologies: ["Item 1", "Item 2"],
+}
+```
+
+## Changing the Company
+Replace ALL values in the `company` block:
+- `name`, `shortName`, `logoText`, `tagline`, `description`
+- `contact.address`, `contact.phone`, `contact.emails`
+- `seo.title`, `seo.description`
+
+That's it — no component changes needed.
