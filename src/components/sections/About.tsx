@@ -1,4 +1,5 @@
 import SectionTitle from "@/components/ui/SectionTitle";
+import { assetPath } from "@/lib/assetPath";
 import IconResolver from "@/components/ui/IconResolver";
 import { siteConfig } from "@/config/site.config";
 
@@ -26,7 +27,7 @@ export default function About() {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-orange-200/40">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="images/about-team.jpg"
+                src={assetPath("/images/about-team.jpg")}
                 alt="DBCON INC team collaborating"
                 className="w-full h-72 lg:h-96 object-cover"
               />

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { ArrowRight, ChevronDown, CheckCircle2 } from "lucide-react";
 import { siteConfig } from "@/config/site.config";
+import { assetPath } from "@/lib/assetPath";
 
 export default function Hero() {
   const { hero } = siteConfig;
@@ -64,7 +65,7 @@ export default function Hero() {
             <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-orange-200/50 border border-orange-100">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="images/hero-bg.jpg"
+                src={assetPath("/images/hero-bg.jpg")}
                 alt="IT professionals at work"
                 className="w-full h-[500px] object-cover object-center"
               />

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { assetPath } from "@/lib/assetPath";
 import { ArrowRight } from "lucide-react";
 import SectionTitle from "@/components/ui/SectionTitle";
 import IconResolver from "@/components/ui/IconResolver";
@@ -21,7 +22,7 @@ export default function Solutions({ preview = false }: { preview?: boolean }) {
         <div className="relative rounded-2xl overflow-hidden mb-12 shadow-xl shadow-orange-100/50">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="images/server-room.jpg"
+            src={assetPath("/images/server-room.jpg")}
             alt="Infrastructure and cloud solutions"
             className="w-full h-52 object-cover object-center"
           />
