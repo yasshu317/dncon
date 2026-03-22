@@ -30,13 +30,13 @@ export default function Contact() {
         <div className="grid lg:grid-cols-2 gap-8">
           {/* Details */}
           <div className="card p-8 space-y-5">
-            <Row icon={<MapPin className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />} label="Address" value={company.contact.address} />
-            <Row icon={<Phone className="w-4 h-4 text-blue-600 shrink-0" />} label="Phone" value={company.contact.phone} href={`tel:${company.contact.phone}`} />
+            <Row icon={<MapPin className="w-4 h-4 text-orange-600 shrink-0 mt-0.5" />} label="Address" value={company.contact.address} />
+            <Row icon={<Phone className="w-4 h-4 text-orange-600 shrink-0" />} label="Phone" value={company.contact.phone} href={`tel:${company.contact.phone}`} />
             {company.contact.fax && (
-              <Row icon={<PrinterIcon className="w-4 h-4 text-blue-600 shrink-0" />} label="Fax" value={company.contact.fax} />
+              <Row icon={<PrinterIcon className="w-4 h-4 text-orange-600 shrink-0" />} label="Fax" value={company.contact.fax} />
             )}
             {Object.entries(company.contact.emails).map(([label, email]) => (
-              <Row key={label} icon={<Mail className="w-4 h-4 text-blue-600 shrink-0" />} label={label} value={email} href={`mailto:${email}`} />
+              <Row key={label} icon={<Mail className="w-4 h-4 text-orange-600 shrink-0" />} label={label} value={email} href={`mailto:${email}`} />
             ))}
           </div>
 
@@ -64,7 +64,7 @@ export default function Contact() {
                     required
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    className="w-full bg-white/70 border border-blue-100 rounded-lg px-3.5 py-2.5 text-sm text-slate-200 placeholder-slate-300 focus:outline-none focus:border-blue-500/50 transition-colors resize-none"
+                    className="w-full bg-white/70 border border-orange-100 rounded-lg px-3.5 py-2.5 text-sm text-slate-700 placeholder-slate-400 focus:outline-none focus:border-orange-400/60 transition-colors resize-none"
                     placeholder="Tell us about your project..."
                   />
                 </div>
@@ -96,7 +96,7 @@ function Row({ icon, label, value, href }: { icon: React.ReactNode; label: strin
       <div>
         <p className="text-[10px] text-slate-500 uppercase tracking-widest mb-0.5">{label}</p>
         {href
-          ? <a href={href} className="text-sm text-slate-500 hover:text-blue-600 transition-colors">{value}</a>
+          ? <a href={href} className="text-sm text-slate-500 hover:text-orange-600 transition-colors">{value}</a>
           : <p className="text-sm text-slate-500">{value}</p>
         }
       </div>
@@ -116,7 +116,7 @@ function Field({ id, label, type = "text", value, onChange, required }: {
         required={required}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full bg-white/70 border border-blue-100 rounded-lg px-3.5 py-2.5 text-sm text-slate-200 placeholder-slate-300 focus:outline-none focus:border-blue-500/50 transition-colors"
+        className="w-full bg-white/70 border border-orange-100 rounded-lg px-3.5 py-2.5 text-sm text-slate-700 placeholder-slate-400 focus:outline-none focus:border-orange-400/60 transition-colors"
         placeholder={label}
         data-testid={`input-${id}`}
       />

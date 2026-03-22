@@ -23,8 +23,8 @@ export default function TechStack() {
               data-testid={`tech-category-${cat.category.toLowerCase().replace(/[\s&/]+/g, "-")}`}
             >
               <div className="flex items-center gap-3 mb-5">
-                <div className="w-9 h-9 rounded-lg bg-blue-100 border border-blue-200 flex items-center justify-center shrink-0">
-                  <IconResolver name={cat.icon} className="w-4 h-4 text-blue-600" />
+                <div className="w-9 h-9 rounded-lg bg-orange-100 border border-orange-200 flex items-center justify-center shrink-0">
+                  <IconResolver name={cat.icon} className="w-4 h-4 text-orange-600" />
                 </div>
                 <h3 className="text-sm font-semibold text-white">{cat.category}</h3>
               </div>
@@ -69,7 +69,7 @@ export default function TechStack() {
           {/* Cloud */}
           <div className="card p-8">
             <div className="inline-flex items-center gap-2 badge mb-5" style={{ background: "rgba(124,58,237,0.08)", borderColor: "rgba(124,58,237,0.2)", color: "#c4b5fd" }}>
-              <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
+              <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
               Cloud-Native 2026
             </div>
             <h3 className="text-xl font-bold text-white mb-3">Multi-Cloud & Serverless</h3>
@@ -82,7 +82,7 @@ export default function TechStack() {
                 { name: "Azure", desc: "AKS · Functions · DevOps" },
                 { name: "GCP", desc: "GKE · Cloud Run · BigQuery" },
               ].map((cloud) => (
-                <div key={cloud.name} className="rounded-lg bg-white/70 border border-blue-100 p-3 text-center">
+                <div key={cloud.name} className="rounded-lg bg-white/70 border border-orange-100 p-3 text-center">
                   <p className="text-white font-bold text-sm">{cloud.name}</p>
                   <p className="text-slate-400 text-[11px] mt-1 leading-tight">{cloud.desc}</p>
                 </div>

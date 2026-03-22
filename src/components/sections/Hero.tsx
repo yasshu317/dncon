@@ -52,7 +52,7 @@ export default function Hero() {
       </div>
 
       {/* Scroll hint */}
-      <a href="#about" className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-slate-400 hover:text-blue-500 transition-colors" aria-label="Scroll down">
+      <a href="#about" className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 text-slate-400 hover:text-orange-500 transition-colors" aria-label="Scroll down">
         <span className="text-[10px] uppercase tracking-widest">Scroll</span>
         <ChevronDown className="w-4 h-4 animate-bounce" />
       </a>

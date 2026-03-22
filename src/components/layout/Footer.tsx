@@ -8,7 +8,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-900 border-t border-slate-800" data-testid="footer">
+    <footer className="bg-stone-900 border-t border-stone-800" data-testid="footer">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
 
@@ -18,17 +18,17 @@ export default function Footer() {
               <LogoIcon size={32} />
               <span className="text-[15px] font-bold text-white">{company.logoText}</span>
             </div>
-            <p className="text-sm text-slate-400 leading-relaxed">{company.tagline}</p>
-            <p className="text-xs text-slate-600">Est. {company.founded}</p>
+            <p className="text-sm text-stone-400 leading-relaxed">{company.tagline}</p>
+            <p className="text-xs text-stone-600">Est. {company.founded}</p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">Quick Links</p>
+            <p className="text-xs font-semibold text-orange-400 uppercase tracking-wider mb-4">Quick Links</p>
             <ul className="space-y-2.5">
               {navigation.filter((n) => n.label !== "Home").slice(0, 6).map((item) => (
                 <li key={item.label}>
-                  <Link href={item.href} className="text-sm text-slate-500 hover:text-slate-200 transition-colors">
+                  <Link href={item.href} className="text-sm text-stone-500 hover:text-orange-300 transition-colors">
                     {item.label}
                   </Link>
                 </li>
@@ -38,11 +38,11 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">Services</p>
+            <p className="text-xs font-semibold text-orange-400 uppercase tracking-wider mb-4">Services</p>
             <ul className="space-y-2.5">
               {services.slice(0, 5).map((s) => (
                 <li key={s.id}>
-                  <Link href={`/services#${s.id}`} className="text-sm text-slate-500 hover:text-slate-200 transition-colors">
+                  <Link href={`/services#${s.id}`} className="text-sm text-stone-500 hover:text-orange-300 transition-colors">
                     {s.title}
                   </Link>
                 </li>
@@ -52,20 +52,20 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-4">Contact</p>
+            <p className="text-xs font-semibold text-orange-400 uppercase tracking-wider mb-4">Contact</p>
             <ul className="space-y-3">
-              <li className="flex items-start gap-2.5 text-sm text-slate-500">
-                <MapPin className="w-4 h-4 text-slate-600 mt-0.5 shrink-0" />
+              <li className="flex items-start gap-2.5 text-sm text-stone-500">
+                <MapPin className="w-4 h-4 text-orange-500/70 mt-0.5 shrink-0" />
                 {company.contact.address}
               </li>
-              <li className="flex items-center gap-2.5 text-sm text-slate-500">
-                <Phone className="w-4 h-4 text-slate-600 shrink-0" />
+              <li className="flex items-center gap-2.5 text-sm text-stone-500">
+                <Phone className="w-4 h-4 text-orange-500/70 shrink-0" />
                 {company.contact.phone}
               </li>
               {Object.entries(company.contact.emails).slice(0, 2).map(([label, email]) => (
                 <li key={label} className="flex items-center gap-2.5">
-                  <Mail className="w-4 h-4 text-slate-600 shrink-0" />
-                  <a href={`mailto:${email}`} className="text-sm text-slate-500 hover:text-slate-200 transition-colors truncate">
+                  <Mail className="w-4 h-4 text-orange-500/70 shrink-0" />
+                  <a href={`mailto:${email}`} className="text-sm text-stone-500 hover:text-orange-300 transition-colors truncate">
                     {email}
                   </a>
                 </li>
@@ -74,11 +74,11 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="h-px bg-slate-800 my-10" />
+        <div className="h-px bg-stone-800 my-10" />
 
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-600">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-stone-600">
           <span>© {year} {company.name}. All rights reserved.</span>
-          <span>Built with BizPresence Pro</span>
+          <span className="text-orange-700/60">Built with BizPresence Pro</span>
         </div>
       </div>
     </footer>

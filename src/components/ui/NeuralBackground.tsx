@@ -24,8 +24,8 @@ export default function NeuralBackground() {
     const particles: Particle[] = [];
     const PARTICLE_COUNT = 55;
     const MAX_DIST = 130;
-    const NODE_COLOR = "rgba(59, 130, 246,";
-    const LINE_COLOR = "rgba(99, 102, 241,";
+    const NODE_COLOR = "rgba(249, 115, 22,";
+    const LINE_COLOR = "rgba(245, 158, 11,";
 
     const resize = () => {
       canvas.width = window.innerWidth;
@@ -41,7 +41,7 @@ export default function NeuralBackground() {
           vx: (Math.random() - 0.5) * 0.4,
           vy: (Math.random() - 0.5) * 0.4,
           radius: Math.random() * 2.5 + 1.5,
-          opacity: Math.random() * 0.4 + 0.15,
+          opacity: Math.random() * 0.35 + 0.12,
         });
       }
     };
@@ -49,7 +49,6 @@ export default function NeuralBackground() {
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Move particles
       for (const p of particles) {
         p.x += p.vx;
         p.y += p.vy;
@@ -57,14 +56,13 @@ export default function NeuralBackground() {
         if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
       }
 
-      // Draw connections
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < MAX_DIST) {
-            const alpha = (1 - dist / MAX_DIST) * 0.18;
+            const alpha = (1 - dist / MAX_DIST) * 0.16;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
@@ -75,7 +73,6 @@ export default function NeuralBackground() {
         }
       }
 
-      // Draw nodes
       for (const p of particles) {
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
@@ -90,14 +87,12 @@ export default function NeuralBackground() {
     initParticles();
     draw();
 
-    window.addEventListener("resize", () => {
-      resize();
-      initParticles();
-    });
+    const onResize = () => { resize(); initParticles(); };
+    window.addEventListener("resize", onResize);
 
     return () => {
       cancelAnimationFrame(animationId);
-      window.removeEventListener("resize", resize);
+      window.removeEventListener("resize", onResize);
     };
   }, []);
 
@@ -105,7 +100,7 @@ export default function NeuralBackground() {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 w-full h-full pointer-events-none"
-      style={{ zIndex: 0, opacity: 0.9 }}
+      style={{ zIndex: 0, opacity: 0.85 }}
       aria-hidden="true"
     />
   );

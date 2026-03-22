@@ -21,8 +21,8 @@ export default function Services({ preview = false }: { preview?: boolean }) {
           {items.map((svc) => (
             <div key={svc.id} id={svc.id} className="card p-6" data-testid={`service-card-${svc.id}`}>
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-9 h-9 rounded-lg bg-blue-100 border border-blue-200 flex items-center justify-center shrink-0">
-                  <IconResolver name={svc.icon} className="w-4 h-4 text-blue-600" />
+                <div className="w-9 h-9 rounded-lg bg-orange-100 border border-orange-200 flex items-center justify-center shrink-0">
+                  <IconResolver name={svc.icon} className="w-4 h-4 text-orange-600" />
                 </div>
                 <h3 className="text-sm font-semibold text-white">{svc.title}</h3>
               </div>
