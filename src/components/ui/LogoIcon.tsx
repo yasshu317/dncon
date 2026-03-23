@@ -1,3 +1,5 @@
+import { siteConfig } from "@/config/site.config";
+
 export default function LogoIcon({ size = 32 }: { size?: number }) {
   return (
     <svg
@@ -6,7 +8,7 @@ export default function LogoIcon({ size = 32 }: { size?: number }) {
       viewBox="0 0 40 40"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      aria-label="DBCON INC logo"
+      aria-label={`${siteConfig.company.name} logo`}
     >
       <defs>
         <linearGradient id="logoGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">

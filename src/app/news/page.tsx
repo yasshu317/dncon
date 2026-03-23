@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: `News & Events — ${siteConfig.company.name}`,
-  description: "Latest news and upcoming events from DBCON INC",
+  description: `News, updates, and events from ${siteConfig.company.shortName}.`,
 };
 
 export default function NewsPage() {

@@ -87,6 +87,8 @@ export interface SiteConfig {
     description: string;
     founded: string;
     logoText: string;
+    /** Short HQ line for marketing copy (e.g. "Boston, MA"). Optional. */
+    hqLine?: string;
     contact: ContactInfo;
     socialLinks?: Record<string, string>;
   };

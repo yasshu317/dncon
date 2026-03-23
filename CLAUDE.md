@@ -1,80 +1,30 @@
 # CLAUDE.md — BizPresence Pro
 
-This file gives Claude AI full context about this project so it can help effectively.
+Context for AI assistants working in this repository.
 
-## What This Project Is
-A **config-driven corporate website template** built for DBCON INC.
-Reusable for any company by editing `src/config/site.config.ts` only.
+## Purpose
 
-- **Live site:** https://yasshu317.github.io/dncon/
-- **Repo:** https://github.com/yasshu317/dncon
-- **Stack:** Next.js 16, TypeScript 5, Tailwind CSS v4, Jest
+**BizPresence Pro** is a reusable, **config-driven** marketing and corporate site template. All customer-facing copy and structure (except layout rules) should be driven from **`src/config/site.config.ts`**. The default **`company`** block uses placeholder values (`Your Company Inc.`, example.com-style contacts) and should be replaced for a real deployment.
 
-## Project Structure
-```
-bizpresence-pro/
-├── src/
-│   ├── app/                    # Next.js App Router pages (thin wrappers)
-│   ├── components/
-│   │   ├── layout/             # Header.tsx, Footer.tsx
-│   │   ├── sections/           # Hero, About, Solutions, TechStack, Services,
-│   │   │                       # Products, Clients, Partners, Careers, News, Contact
-│   │   └── ui/                 # SectionTitle, IconResolver
-│   ├── config/
-│   │   └── site.config.ts      # ALL CONTENT LIVES HERE
-│   └── types/index.ts          # TypeScript interfaces
-├── __tests__/                  # Jest tests (mirrors src/)
-├── .github/workflows/          # CI + deploy GitHub Actions
-├── .vscode/                    # Editor settings
-├── .cursor/rules/              # Cursor AI rules
-└── AGENTS.md                   # Codex/agent instructions
-```
+## Stack
 
-## Key Design Decisions
-1. **Single config file** — `site.config.ts` drives all text, nav, cards, forms
-2. **Static export** — `next.config.ts` uses `output: "export"` for GitHub Pages
-3. **CSS utilities** — custom utility classes in `globals.css` (`.card`, `.btn-primary`, `.badge`, etc.)
-4. **No heavy effects** — clean dark design, subtle borders, minimal gradients
+- Next.js 16 (App Router), static export where configured
+- TypeScript 5, Tailwind CSS v4
+- Jest + React Testing Library
 
-## Common Tasks
+## Layout
 
-### Run locally
-```bash
-npm run dev        # dev server at localhost:3000
-npm test           # run Jest tests
-npm run build      # static export to out/
-npm run deploy     # deploy out/ to gh-pages branch
-```
+- `src/app/` — routes and page-level metadata (prefer interpolating `siteConfig.company` in descriptions)
+- `src/components/sections/` — presentational sections; import `siteConfig`, avoid hardcoded org names
+- `src/components/ui/` — shared UI (e.g. `ChatWidget`, `LogoIcon`, `SectionTitle`)
+- `src/lib/` — small utilities (`assetPath`, `chatbotReply`)
 
-### Update content
-Edit `src/config/site.config.ts` — no component changes needed.
+## Rules
 
-### Add a new page
-1. Create `src/app/new-page/page.tsx`
-2. Add a section component in `src/components/sections/`
-3. Add route to `navigation` in `site.config.ts`
-4. Add test in `__tests__/components/`
+- Do not hardcode company names or contact data in components; use `siteConfig`.
+- After substantive edits: `npm run lint`, `npm test`, `npx tsc --noEmit`, `npm run build`.
+- Do not commit secrets or real production credentials into the repo.
 
-### Add an icon
-1. Import from `lucide-react` in `src/components/ui/IconResolver.tsx`
-2. Add to the `iconMap` object
-3. Reference by name string in `site.config.ts`
+## Deployment notes
 
-## Testing Conventions
-- Tests use `data-testid` attributes for targeting
-- Config-driven assertions: import `siteConfig` to test against live data
-- Run `npm test` before every commit / deploy
-
-## Deployment Flow
-```
-git push main
-  → GitHub Actions CI runs tests + build
-  → GitHub Actions deploy pushes out/ to gh-pages
-  → GitHub Pages serves https://yasshu317.github.io/dncon/
-```
-
-## What NOT to Change
-- Do not add global styles outside `globals.css`
-- Do not hardcode company name/content in components
-- Do not change `output: "export"` in `next.config.ts` — required for GitHub Pages
-- Do not push the `out/` folder to `main` (it goes to `gh-pages` via Actions)
+If using a subpath (e.g. GitHub Pages `/repo-name`), ensure `NEXT_PUBLIC_BASE_PATH` matches and public assets use `assetPath()` where needed.

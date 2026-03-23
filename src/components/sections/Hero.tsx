@@ -45,7 +45,7 @@ export default function Hero() {
           <div className="order-2 lg:order-1 flex flex-col justify-center">
             <div className="badge mb-6 self-start">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block" />
-              Trusted by Fortune 1000 · {hero.subheadline}
+              Trusted by leading enterprises · {hero.subheadline}
             </div>
 
             <h1
@@ -99,7 +99,7 @@ export default function Hero() {
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={assetPath("/images/hero-img.png")}
-                alt="DBCON INC IT solutions"
+                alt={`${siteConfig.company.name} — solutions illustration`}
                 className="hero-float-img relative w-64 sm:w-80 lg:w-full lg:max-w-lg drop-shadow-xl"
               />
             </div>

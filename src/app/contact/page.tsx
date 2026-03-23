@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: `Contact — ${siteConfig.company.name}`,
-  description: "Get in touch with the DBCON INC team. We're ready to discuss your IT needs.",
+  description: `Contact ${siteConfig.company.shortName} for technology consulting, delivery, and support inquiries.`,
 };
 
 export default function ContactPage() {

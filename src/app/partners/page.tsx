@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: `Partners & Clients — ${siteConfig.company.name}`,
-  description: "Our global partner network and Fortune 1000 client roster.",
+  description: `Partner programs and representative clients for ${siteConfig.company.shortName}.`,
 };
 
 export default function PartnersPage() {

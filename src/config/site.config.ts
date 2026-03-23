@@ -1,40 +1,41 @@
 /**
  * ============================================================
- *  BizPresence Pro — Site Configuration
+ *  BizPresence Pro — Site configuration (single source of truth)
  * ============================================================
- *  To adapt this template for a different company, update the
- *  values in this file only. No component code changes needed.
+ *  Replace the COMPANY block with your organization’s details.
+ *  All other sections are sample template copy — edit as needed.
  * ============================================================
  */
 import type { SiteConfig } from "@/types";
 
 export const siteConfig: SiteConfig = {
-  // ── Company Identity ──────────────────────────────────────
+  // ── Company (replace with your organization) ───────────────
   company: {
-    name: "DBCON INC",
-    shortName: "DBCON INC",
-    tagline: "Information Technology Solutions",
+    name: "Your Company Inc.",
+    shortName: "Your Company",
+    tagline: "Enterprise Technology & Digital Services",
     description:
-      "An international Information Technology company providing consulting and outsourcing solutions to Fortune 1000 companies with the latest technology available in the market.",
-    founded: "Late 1995",
-    logoText: "DBCON INC",
+      "A professional technology services organization delivering consulting, software engineering, and managed solutions. Update this description in site.config.ts to reflect your value proposition and markets.",
+    founded: "20XX",
+    logoText: "YOUR COMPANY",
+    hqLine: "Your City, Region",
     contact: {
-      address: "1 Tara Blvd, Suite #LL7, Nashua, NH 03062",
-      phone: "603-891-1200",
-      fax: "603-891-1452",
+      address: "123 Business Boulevard, Suite 100, Your City, ST 00000",
+      phone: "+1 (555) 000-0000",
+      fax: "+1 (555) 000-0001",
       emails: {
-        Sales: "sales@dbconinc.com",
-        Jobs: "jobs@dbconinc.com",
-        "General Info": "info@dbconinc.com",
-        President: "president@dbconinc.com",
+        Sales: "sales@yourcompany.com",
+        Jobs: "careers@yourcompany.com",
+        "General Info": "hello@yourcompany.com",
+        President: "office@yourcompany.com",
       },
     },
   },
 
-  // ── Design Theme  ─────────────────────────────────────────
+  // ── Design theme (reference for tooling / future theming) ───
   theme: {
-    primaryColor: "#3b82f6",
-    accentColor: "#7c3aed",
+    primaryColor: "#f97316",
+    accentColor: "#f59e0b",
   },
 
   // ── Top Navigation ────────────────────────────────────────
@@ -64,7 +65,7 @@ export const siteConfig: SiteConfig = {
       label: "Products",
       href: "/products",
       children: [
-        { label: "Columbus", href: "/products#columbus" },
+        { label: "Aurora Suite", href: "/products#sample-suite" },
       ],
     },
     {
@@ -99,15 +100,15 @@ export const siteConfig: SiteConfig = {
   // ── Hero Section ──────────────────────────────────────────
   hero: {
     headline: "Powering Enterprise IT",
-    subheadline: "Since Late 1995",
+    subheadline: "Trusted by leading enterprises",
     description:
-      "We deliver consulting, outsourcing, and software solutions that keep Fortune 1000 enterprises running at the cutting edge. From ERP to e-commerce, from architecture to deployment — we've got you covered.",
+      "We deliver consulting, outsourcing, and software solutions that help large organizations stay competitive — from ERP and integration to cloud, custom development, and ongoing support.",
     ctaPrimary: { label: "Explore Solutions", href: "/solutions" },
     ctaSecondary: { label: "Contact Us", href: "/contact" },
     stats: [
       { value: "30+", label: "Years of Excellence" },
-      { value: "15+", label: "Fortune 1000 Clients" },
-      { value: "5", label: "Outsourcing Models" },
+      { value: "15+", label: "Enterprise Clients" },
+      { value: "5", label: "Delivery Models" },
       { value: "100%", label: "Client Commitment" },
     ],
   },
@@ -115,7 +116,7 @@ export const siteConfig: SiteConfig = {
   // ── About ─────────────────────────────────────────────────
   about: {
     summary:
-      "DBCON INC is a privately held software products development and consulting/outsourcing services company started and managed by a team of young, highly motivated software engineers with a vision to provide cost-effective solutions. From our inception as a small company in the late 1995, we have been innovative about how we work and what we develop.",
+      "We are a privately held software products and consulting firm, built by experienced engineers and delivery leaders focused on practical, cost-effective solutions. Since our early years, we have invested continuously in how we build, partner, and support long-running enterprise systems.",
     additionalParagraphs: [
       "The company continues to devote substantial human and financial resources to its development, services, and support activities.",
       "Our success lies in our customer's and partner's satisfaction and success, combined with our employee's enthusiasm and growth.",
@@ -224,11 +225,11 @@ export const siteConfig: SiteConfig = {
   // ── Products ──────────────────────────────────────────────
   products: [
     {
-      id: "columbus",
-      name: "Columbus",
-      tagline: "Recruiting Firm Management Suite",
+      id: "sample-suite",
+      name: "Aurora Suite",
+      tagline: "Sample enterprise operations product",
       description:
-        "Columbus is a comprehensive solution to manage the full lifecycle of a recruiting firm's business operations. Built for efficiency and scale, it centralizes every aspect of your recruiting workflow.",
+        "Aurora Suite is example product copy for this template: a modular platform to manage core operational workflows (candidates, clients, partners, time, billing). Replace with your real product story in site.config.ts.",
       features: [
         "Candidate Management",
         "Client Relationship Management",
@@ -304,7 +305,7 @@ export const siteConfig: SiteConfig = {
       summary:
         "End-to-end development across desktop, web, and enterprise platforms.",
       description:
-        "Full-range services for intuitive UIs, back-end databases, and middle-tier applications. We build complex systems using C++, J2EE, CORBA, .NET, XML, WebLogic, and WebSphere. Our EAI team creates SAP integrations (ABAP, IDOC, ALE, EDI, XML, BAPI, JCo, SAP-BW) for Fortune 100 companies.",
+        "Full-range services for intuitive UIs, back-end databases, and middle-tier applications. We build complex systems using C++, J2EE, CORBA, .NET, XML, WebLogic, and WebSphere. Our EAI team creates SAP integrations (ABAP, IDOC, ALE, EDI, XML, BAPI, JCo, SAP-BW) for large enterprise programs.",
       technologies: ["C++", "J2EE", ".NET", "XML", "WebLogic", "WebSphere", "SAP ABAP"],
     },
     {
@@ -332,7 +333,7 @@ export const siteConfig: SiteConfig = {
   // ── Careers ───────────────────────────────────────────────
   careers: {
     intro:
-      "DBCON INC offers a comprehensive benefits package and a culture that values innovation, growth, and employee satisfaction. We are constantly looking for highly qualified and motivated professionals.",
+      "We offer competitive benefits and a culture that values growth, collaboration, and technical excellence. We regularly hire experienced professionals across consulting, engineering, and delivery roles.",
     benefits: [
       "Comprehensive health care coverage options",
       "Referral & performance bonuses",
@@ -350,7 +351,7 @@ export const siteConfig: SiteConfig = {
         experience: "5 years",
         skills:
           "Functional requirements, systems analysis, Genesys interaction routing, Web interface & IVR, .Net, Voice objects, Genesys IRD/CME/OCM/SCI, Actuate, WCF, Sonic ESB, SQL 2003, UAT, MS Visual Studio 2010.",
-        location: "Nashua, NH 03062",
+        location: "HQ — see posting",
         hoursPerWeek: "40",
       },
       {
@@ -361,7 +362,7 @@ export const siteConfig: SiteConfig = {
         experience: "2 years",
         skills:
           "J2EE, JSF, ORM, SOA, STRUTS, ADF, BPM, Single Sign-On, C++, Objective-C, WSDL, MQ Series, Solaris, Linux.",
-        location: "Nashua, NH 03062",
+        location: "HQ — see posting",
         hoursPerWeek: "40",
       },
       {
@@ -372,7 +373,7 @@ export const siteConfig: SiteConfig = {
         experience: "5 years",
         skills:
           "J2EE, JSF, ORM, SOA, STRUTS, MQ Series, Palm OS, Code Warrior, Solaris, Linux. M.S or MBA required.",
-        location: "Nashua, NH 03062",
+        location: "HQ — see posting",
         hoursPerWeek: "40",
       },
       {
@@ -383,7 +384,7 @@ export const siteConfig: SiteConfig = {
         experience: "5 years",
         skills:
           "TANDEM application development, Connex, Paragon (FASTest), ISO8583, North East Switch, HP Advantage, SAFE CU, C, TACL, TAL, Pathway, FUP, Enscribe.",
-        location: "Nashua, NH 03062",
+        location: "HQ — see posting",
         hoursPerWeek: "40",
       },
       {
@@ -393,7 +394,7 @@ export const siteConfig: SiteConfig = {
         type: "contract",
         experience: "3 years",
         skills: ".NET Framework, ASP.NET, C#, COBOL II, CICS, VSAM, JCL, Alpha Server 1200.",
-        location: "Nashua, NH 03062",
+        location: "HQ — see posting",
         hoursPerWeek: "40",
       },
       {
@@ -404,18 +405,18 @@ export const siteConfig: SiteConfig = {
         experience: "3 years",
         skills:
           "Virtual machine design, public cloud environments, VPC, deployment scripts, automation scripting, managed service provider coordination.",
-        location: "Nashua, NH 03062",
+        location: "HQ — see posting",
         hoursPerWeek: "40",
       },
     ],
     applyInfo:
-      "Send your resume to: Attn: HR, DBCON INC, 1 Tara Blvd, Suite LL7, Nashua, NH 03062 | Fax: 603-891-1452 | Email: resumes@dbconinc.com",
+      "Apply using the instructions on the Careers page. Include your resume and the position ID. Mailing address, fax, and dedicated HR email are listed in the footer and Contact page once you update site.config.ts.",
   },
 
   // ── Partners ──────────────────────────────────────────────
   partners: {
     intro:
-      "DBCON INC helps companies link their business processes through our widespread IT knowledge and talented resources, working with partners across the USA and offshore sites.",
+      "We help organizations connect business processes and technology through experienced delivery teams, working with partners across regions and time zones.",
     categories: [
       {
         category: "Consulting Partners",
@@ -429,32 +430,32 @@ export const siteConfig: SiteConfig = {
           "Software Testing",
           "Application Deployment, Support & Maintenance",
         ],
-        contact: "candidates@dbconinc.com (candidates) | joborders@dbconinc.com (job orders)",
+        contact: "candidates@yourcompany.com (candidates) | joborders@yourcompany.com (job orders)",
       },
       {
         category: "IT Solutions Partners",
         description:
-          "We outsource projects from Fortune 1000 companies and work with quality development partners committed to delivering within time and budget.",
-        contact: "partners@dbconinc.com",
+          "We collaborate with delivery partners on complex programs for global enterprises, with clear scope, quality gates, and predictable timelines.",
+        contact: "partners@yourcompany.com",
       },
     ],
   },
 
   // ── Clients ───────────────────────────────────────────────
   clients: [
-    "Arizona State University",
-    "Capgemini",
-    "Capital One",
-    "Cisco Systems",
-    "CVS Caremark",
-    "Kentucky State University",
-    "Mastercard",
-    "Michaels Stores",
-    "Microsoft",
-    "NEC",
-    "Oncor",
-    "Prudential",
-    "Walmart",
+    "Sample Healthcare Group",
+    "Example Financial Corp",
+    "Demo Retail International",
+    "Northwind Utilities",
+    "Contoso University",
+    "Fabrikam Logistics",
+    "Adventure Works Tech",
+    "Wide World Trading",
+    "Litware Industries",
+    "Alpine Supply Co.",
+    "Trey Research Labs",
+    "Blue Horizon Airlines",
+    "Consolidated Messaging",
   ],
 
   // ── Technology Stack ──────────────────────────────────────
@@ -559,10 +560,10 @@ export const siteConfig: SiteConfig = {
   news: [
     {
       id: "1",
-      title: "DBCON INC Relocates to Larger Nashua Office",
+      title: "Template: publish your company news here",
       date: "2024-01-15",
       summary:
-        "DBCON INC has relocated to a larger, modern office space in Nashua to accommodate our growing team and expanding client base.",
+        "Replace this item in site.config.ts with real press releases, milestones, or leadership updates. This entry demonstrates the news layout only.",
       type: "news",
     },
   ],
@@ -577,28 +578,27 @@ export const siteConfig: SiteConfig = {
 
   // ── SEO ───────────────────────────────────────────────────
   seo: {
-    title: "DBCON INC — Information Technology Solutions",
+    title: "Your Company Inc. — Enterprise Technology & Services",
     description:
-      "International IT consulting and outsourcing solutions for Fortune 1000 companies. Software development, ERP, cloud, database, and web services since 1995.",
+      "Professional IT consulting, software delivery, cloud, ERP, and managed services. Config-driven corporate site template — customize in site.config.ts.",
     keywords: [
       "IT consulting",
-      "outsourcing",
       "software development",
+      "enterprise services",
+      "cloud",
       "ERP",
       "SAP",
-      "J2EE",
-      ".NET",
-      "database services",
-      "Fortune 1000",
+      "outsourcing",
+      "digital transformation",
     ],
   },
 
   // ── Simple chat assistant (keyword → answer) ─────────────
   chatbot: {
-    title: "DBCON Assistant",
+    title: "Website Assistant",
     placeholder: "Ask a quick question…",
     welcomeMessage:
-      "Hi! I’m a simple assistant. Ask about services, contact info, careers, or what we do — or tap a suggestion below.",
+      "Hi — I answer common questions from this site’s content. Ask about services, contact options, careers, or delivery models, or tap a suggestion below.",
     suggestions: [
       "What services do you offer?",
       "How do I contact you?",
@@ -618,27 +618,27 @@ export const siteConfig: SiteConfig = {
       {
         keywords: ["contact", "email", "phone", "call", "reach", "sales"],
         answer:
-          "Call us at 603-891-1200. Email sales@dbconinc.com for business inquiries, jobs@dbconinc.com for careers, or info@dbconinc.com for general questions. Visit the Contact page for the full list.",
+          "Phone, fax, and department emails are listed on the Contact page and in the site footer. Update site.config.ts with your real contact details.",
       },
       {
-        keywords: ["address", "location", "where", "office", "nashua", "visit"],
+        keywords: ["address", "location", "where", "office", "visit", "hq"],
         answer:
-          "Our office is at 1 Tara Blvd, Suite #LL7, Nashua, NH 03062.",
+          "The headquarters address shown in the footer and Contact page comes from site.config.ts — replace it with your organization’s address.",
       },
       {
         keywords: ["career", "careers", "job", "jobs", "hiring", "resume", "apply"],
         answer:
-          "We’re always interested in talented people. Send your resume to jobs@dbconinc.com or check the Careers page for open positions and how to apply.",
+          "Open roles and how to apply are on the Careers page. Sample postings are included as template data; replace them with your actual listings.",
       },
       {
-        keywords: ["founded", "since", "history", "how long", "1995"],
+        keywords: ["founded", "since", "history", "how long"],
         answer:
-          "DBCON INC has been serving clients since the late 1990s with a focus on Fortune 1000 enterprises and long-term partnerships.",
+          "The “founded” line and company story are defined in site.config.ts under company and about — update them to match your organization.",
       },
       {
-        keywords: ["client", "clients", "who do you work", "fortune"],
+        keywords: ["client", "clients", "who do you work", "customers"],
         answer:
-          "We work with leading enterprises including major retailers, financial institutions, universities, and technology companies. See the Clients section for examples.",
+          "The Clients section lists sample names for layout preview. Replace the clients array in site.config.ts with your public references or logos.",
       },
       {
         keywords: ["sap", "erp", "oracle", "cloud", "aws", "azure", "tech stack", "technology"],
@@ -646,9 +646,9 @@ export const siteConfig: SiteConfig = {
           "We work across ERP (SAP, Oracle), cloud (AWS, Azure, GCP), databases, integration, DevOps, and modern stacks including Ruby on Rails. See Tech Stack for details.",
       },
       {
-        keywords: ["columbus", "product", "software product"],
+        keywords: ["aurora", "product", "software product", "suite"],
         answer:
-          "Columbus is our recruiting-firm business solution with modules for candidates, clients, partners, timesheets, and job orders. Learn more on the Products page.",
+          "The Products page includes sample product copy (Aurora Suite) to show layout. Replace it in site.config.ts with your real offerings.",
       },
       {
         keywords: ["outsourc", "onsite", "offshore", "nearshore", "consulting"],
@@ -657,6 +657,6 @@ export const siteConfig: SiteConfig = {
       },
     ],
     fallbackMessage:
-      "Thanks for your message! For anything specific, please use the Contact page or email info@dbconinc.com — our team will respond promptly.",
+      "Thanks for your message. For detailed requests, use the Contact page or the general inquiry email from your site configuration.",
   },
 };

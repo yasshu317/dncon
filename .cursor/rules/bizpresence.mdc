@@ -1,69 +1,44 @@
 ---
-description: Core rules for BizPresence Pro — corporate site template for DBCON INC
+description: Core rules for BizPresence Pro — config-driven corporate site template
 globs: ["**/*.ts", "**/*.tsx", "**/*.css"]
 alwaysApply: true
 ---
 
 # BizPresence Pro — Cursor Rules
 
-## Project Purpose
-This is a config-driven corporate website template for DBCON INC.
-All company content lives in `src/config/site.config.ts` — no hardcoding in components.
+## Project purpose
+
+Config-driven **corporate website template**. Replace the **`company`** block in `site.config.ts` for each deployment. Do not hardcode organization-specific copy in components.
 
 ## Stack
+
 - Next.js 16 (App Router, static export)
-- TypeScript 5
-- Tailwind CSS v4
-- Lucide React icons
+- TypeScript 5, Tailwind CSS v4, Lucide React
 - Jest + React Testing Library
 
-## Code Style
-- Use TypeScript strictly — no `any`, no implicit types
-- Functional components only — no class components
-- Export default for page/section components
-- Named exports for utilities and types
-- Props interfaces defined inline or in `src/types/index.ts`
-- Keep components focused — one responsibility per file
+## Content
 
-## Content Rules
-- NEVER hardcode company name, contact, or content in components
-- All text content must come from `siteConfig` imported from `@/config/site.config`
-- To change company: edit `site.config.ts` only
+- Source of truth: **`src/config/site.config.ts`**
+- Components import `siteConfig` from `@/config/site.config`
+- Metadata in `src/app/*/page.tsx` should use `siteConfig.company` where appropriate
 
-## Styling Rules
-- Use utility classes defined in `globals.css` first:
-  - `.card` — standard dark card with subtle border
-  - `.badge` — pill label for section headings
-  - `.btn-primary` — solid blue CTA button
-  - `.btn-ghost` — outline CTA button
-  - `.tech-pill` — small technology tag
-  - `.surface` — slightly lighter background section
-  - `.divider` — horizontal gradient line
-  - `.gradient-text` — blue-purple gradient text
-- Avoid inline `style={{}}` except for dynamic color values
-- No heavy glow effects or stacked gradients — keep it clean
+## Styling
 
-## File Structure
-```
-src/
-  app/           → Next.js pages (thin wrappers)
-  components/
-    layout/      → Header, Footer
-    sections/    → Page section components
-    ui/          → Reusable primitives
-  config/        → site.config.ts (all content)
-  types/         → TypeScript interfaces
-__tests__/       → Jest tests mirroring src structure
-```
+Prefer utilities from **`src/app/globals.css`**: `.card`, `.badge`, `.btn-primary`, `.btn-ghost`, `.gradient-text`, `.surface`, `.stat-card`, `.client-tile`, `.hero-section`, etc. Theme is warm white + orange accents.
+
+## Structure
+
+- `src/app/` — routes and thin page wrappers
+- `src/components/sections/` — one file per major section
+- `src/components/ui/` — shared primitives (e.g. `ChatWidget`, `LogoIcon`)
+- `src/lib/` — `assetPath`, `chatbotReply`, etc.
 
 ## Testing
-- Every section component must have a corresponding test file
-- Use `data-testid` attributes for test targeting
-- Tests import from `@/config/site.config` to stay config-driven
-- Run: `npm test` before committing
+
+- Use `data-testid` for stable selectors
+- Run `npm test` and `npm run lint` before commits
 
 ## Deployment
-- `npm run build` → generates `out/` folder (static HTML)
-- `npm run deploy` → pushes `out/` to `gh-pages` branch
-- GitHub Actions auto-deploys on push to `main`
-- Live URL: https://yasshu317.github.io/dncon/
+
+- Static output: `out/` after `npm run build`
+- Subpath hosting: set `NEXT_PUBLIC_BASE_PATH`; use `assetPath()` for public images when needed

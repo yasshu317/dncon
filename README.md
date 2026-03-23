@@ -1,179 +1,49 @@
 # BizPresence Pro
 
-**A modern, config-driven corporate website template** — built with Next.js 15, TypeScript, and Tailwind CSS. Originally crafted as a gift for [DBCON INC](https://www.dbconinc.com), but designed to be reused for any company by editing a single config file.
+**Config-driven corporate website template** for technology and professional services firms. Built with **Next.js 16** (App Router), **TypeScript**, **Tailwind CSS v4**, and static export support for hosts such as GitHub Pages.
 
-## Features
+## Highlights
 
-- **One-file customization** — swap all content (company name, nav, services, careers, clients) in `src/config/site.config.ts`. No component code changes needed.
-- **IT-themed dark design** — navy background, blue-purple gradient glassmorphism cards, circuit-board grid, animated shimmer text.
-- **Full page routing** — Home, Company, Solutions, Products, Services, Tech Stack, Partners, Careers, News & Events, Contact.
-- **Technology Stack section** — highlights Ruby on Rails, AWS/Azure/GCP, Kubernetes, Terraform, and more, with spotlight cards.
-- **Contact form** — ready to wire up to any email API (Resend, SendGrid, etc.).
-- **78 Jest + React Testing Library tests** — all passing.
-- **TypeScript throughout** — fully typed `SiteConfig` interface ensures correctness at compile time.
-- **SEO metadata** — per-page title/description/keywords via Next.js Metadata API.
+- **Single configuration file** — company profile, navigation, pages, SEO, and a lightweight keyword-based chat assistant live in `src/config/site.config.ts`.
+- **Strong typing** — `SiteConfig` in `src/types/index.ts` keeps content changes safe at compile time.
+- **Full section set** — Home, Company, Solutions, Products, Services, Tech Stack, Partners, Careers, News, Contact.
+- **Tests** — Jest and React Testing Library (`npm test`).
+- **CI/CD** — GitHub Actions workflows for lint, tests, typecheck, build, and optional deploy to GitHub Pages.
 
----
-
-## Quick Start
+## Quick start
 
 ```bash
-# Install dependencies
 npm install
-
-# Run dev server
-npm run dev
-
-# Run tests
+npm run dev          # http://localhost:3000
 npm test
-
-# Build for production
-npm run build
-
-# Start production server
-npm start
+npm run build        # static site → out/
 ```
 
-Open [http://localhost:3000](http://localhost:3000).
+## Customization
 
----
+1. Open **`src/config/site.config.ts`**.
+2. Replace the **`company`** block (name, tagline, contact, emails, optional `hqLine`).
+3. Adjust **hero**, **about**, **services**, **careers**, **clients**, **news**, **seo**, and **chatbot** to match your organization.
+4. Rebuild. No component edits are required for copy or structure-only changes.
 
-## Adapting for Another Company
+See `.cursor/rules/content.mdc` for a field-by-field map.
 
-**All content lives in one file:**
-
-```
-src/config/site.config.ts
-```
-
-Edit these sections to rebrand for any company:
-
-| Section | What to change |
-|---|---|
-| `company` | Name, tagline, contact info, emails |
-| `hero` | Headline, description, stats, CTA buttons |
-| `about` | Mission, vision, highlights |
-| `solutions` | Engagement model cards |
-| `products` | Product name, features |
-| `services` | Service cards + technology tags |
-| `techStack` | Technology categories & items |
-| `careers` | Benefits, job positions |
-| `partners` | Partner categories + contacts |
-| `clients` | Client name list |
-| `news` | News items + event list |
-| `seo` | Page title, meta description, keywords |
-
-No component code needs to change.
-
----
-
-## Project Structure
-
-```
-bizpresence-pro/
-├── src/
-│   ├── app/                    # Next.js App Router pages
-│   │   ├── page.tsx            # Home
-│   │   ├── company/page.tsx
-│   │   ├── solutions/page.tsx
-│   │   ├── products/page.tsx
-│   │   ├── services/page.tsx
-│   │   ├── tech-stack/page.tsx
-│   │   ├── partners/page.tsx
-│   │   ├── careers/page.tsx
-│   │   ├── news/page.tsx
-│   │   └── contact/page.tsx
-│   ├── components/
-│   │   ├── layout/
-│   │   │   ├── Header.tsx      # Sticky nav with mega-dropdown + mobile menu
-│   │   │   └── Footer.tsx
-│   │   ├── sections/
-│   │   │   ├── Hero.tsx
-│   │   │   ├── About.tsx
-│   │   │   ├── Solutions.tsx
-│   │   │   ├── TechStack.tsx   # Ruby on Rails + Cloud spotlight
-│   │   │   ├── Services.tsx
-│   │   │   ├── Products.tsx
-│   │   │   ├── Clients.tsx
-│   │   │   ├── Partners.tsx
-│   │   │   ├── Careers.tsx
-│   │   │   ├── News.tsx
-│   │   │   └── Contact.tsx
-│   │   └── ui/
-│   │       ├── SectionTitle.tsx
-│   │       └── IconResolver.tsx
-│   ├── config/
-│   │   └── site.config.ts      # ← ALL content lives here
-│   └── types/
-│       └── index.ts            # Full TypeScript interfaces
-├── __tests__/
-│   ├── config/
-│   │   └── site.config.test.ts
-│   └── components/
-│       ├── Hero.test.tsx
-│       ├── Solutions.test.tsx
-│       ├── Services.test.tsx
-│       ├── TechStack.test.tsx
-│       ├── Clients.test.tsx
-│       ├── Careers.test.tsx
-│       ├── Contact.test.tsx
-│       ├── Footer.test.tsx
-│       └── SectionTitle.test.tsx
-├── jest.config.ts
-├── jest.setup.ts
-└── README.md
-```
-
----
-
-## Tech Stack
+## Tech stack
 
 | Layer | Technology |
-|---|---|
-| Framework | Next.js 16 (App Router) |
+|-------|------------|
+| Framework | Next.js 16 (App Router, `output: "export"`) |
 | Language | TypeScript 5 |
-| Styling | Tailwind CSS v4 |
+| Styling | Tailwind CSS v4, shared utilities in `src/app/globals.css` |
 | Icons | Lucide React |
-| Animation | Framer Motion |
-| Testing | Jest + React Testing Library |
-| Deployment | Vercel / Netlify / GitHub Pages (static export) |
+| Testing | Jest, RTL, jsdom |
 
----
+## Deployment
 
-## Deployment (Direct Upload — No Git CLI Required)
+- Set `NEXT_PUBLIC_BASE_PATH` if the site is served from a subpath (e.g. GitHub Pages project site).
+- Production build: `npm run build` — deploy the **`out/`** directory.
+- This repository includes example workflows under `.github/workflows/` for CI and Pages deploy.
 
-### Option 1: Vercel (recommended)
-1. Run `npm run build`
-2. Drag and drop the project folder to [vercel.com/new](https://vercel.com/new)
+## License
 
-### Option 2: Netlify
-1. Run `npm run build`
-2. Drag the `.next` + `public` output to [app.netlify.com/drop](https://app.netlify.com/drop)
-
-### Option 3: Static Export (pure HTML — works on any host)
-Add to `next.config.ts`:
-```ts
-const nextConfig = { output: "export" };
-```
-Then run `npm run build` → upload the `out/` folder anywhere.
-
----
-
-## Running Tests
-
-```bash
-# Run all tests once
-npm test
-
-# Watch mode
-npm run test:watch
-
-# Coverage report
-npm run test:coverage
-```
-
-Current: **78 tests across 10 test suites — all passing.**
-
----
-
-Built with care as a gift for DBCON INC — Est. 1995.
+Private / use per your organization’s policy. Template content uses placeholder company data — replace before production use.

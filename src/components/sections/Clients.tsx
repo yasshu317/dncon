@@ -9,7 +9,7 @@ export default function Clients() {
           label="Clients"
           title="Trusted by"
           highlight="Industry Leaders"
-          description="Delivering solutions for some of the world's most recognized enterprises."
+          description="Delivering solutions for organizations that depend on reliable technology and delivery."
         />
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 mb-16">

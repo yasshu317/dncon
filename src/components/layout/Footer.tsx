@@ -76,9 +76,8 @@ export default function Footer() {
 
         <div className="h-px bg-stone-800 my-10" />
 
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-stone-600">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 text-xs text-stone-600">
           <span>© {year} {company.name}. All rights reserved.</span>
-          <span className="text-orange-700/60">Built with BizPresence Pro</span>
         </div>
       </div>
     </footer>

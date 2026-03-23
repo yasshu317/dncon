@@ -55,8 +55,9 @@ alwaysApply: false
 
 ## Changing the Company
 Replace ALL values in the `company` block:
-- `name`, `shortName`, `logoText`, `tagline`, `description`
-- `contact.address`, `contact.phone`, `contact.emails`
-- `seo.title`, `seo.description`
+- `name`, `shortName`, `logoText`, `tagline`, `description`, `founded`
+- Optional: `hqLine` (short HQ string for About footer, e.g. `"Boston, MA"`)
+- `contact.address`, `contact.phone`, `contact.fax`, `contact.emails`
+- Then update `seo.title` and `seo.description` to match
 
 That's it — no component changes needed.
