@@ -592,4 +592,71 @@ export const siteConfig: SiteConfig = {
       "Fortune 1000",
     ],
   },
+
+  // ── Simple chat assistant (keyword → answer) ─────────────
+  chatbot: {
+    title: "DBCON Assistant",
+    placeholder: "Ask a quick question…",
+    welcomeMessage:
+      "Hi! I’m a simple assistant. Ask about services, contact info, careers, or what we do — or tap a suggestion below.",
+    suggestions: [
+      "What services do you offer?",
+      "How do I contact you?",
+      "Where are you located?",
+      "Are you hiring?",
+    ],
+    faqs: [
+      {
+        keywords: ["hello", "hi", "hey", "good morning", "good afternoon"],
+        answer: "Hello! How can I help you today? You can ask about our services, location, contact details, or careers.",
+      },
+      {
+        keywords: ["service", "services", "what do you do", "offer", "support"],
+        answer:
+          "We provide application support, database services, network & OS administration, project management, design & architecture, and more. See the Services page for the full list.",
+      },
+      {
+        keywords: ["contact", "email", "phone", "call", "reach", "sales"],
+        answer:
+          "Call us at 603-891-1200. Email sales@dbconinc.com for business inquiries, jobs@dbconinc.com for careers, or info@dbconinc.com for general questions. Visit the Contact page for the full list.",
+      },
+      {
+        keywords: ["address", "location", "where", "office", "nashua", "visit"],
+        answer:
+          "Our office is at 1 Tara Blvd, Suite #LL7, Nashua, NH 03062.",
+      },
+      {
+        keywords: ["career", "careers", "job", "jobs", "hiring", "resume", "apply"],
+        answer:
+          "We’re always interested in talented people. Send your resume to jobs@dbconinc.com or check the Careers page for open positions and how to apply.",
+      },
+      {
+        keywords: ["founded", "since", "history", "how long", "1995"],
+        answer:
+          "DBCON INC has been serving clients since the late 1990s with a focus on Fortune 1000 enterprises and long-term partnerships.",
+      },
+      {
+        keywords: ["client", "clients", "who do you work", "fortune"],
+        answer:
+          "We work with leading enterprises including major retailers, financial institutions, universities, and technology companies. See the Clients section for examples.",
+      },
+      {
+        keywords: ["sap", "erp", "oracle", "cloud", "aws", "azure", "tech stack", "technology"],
+        answer:
+          "We work across ERP (SAP, Oracle), cloud (AWS, Azure, GCP), databases, integration, DevOps, and modern stacks including Ruby on Rails. See Tech Stack for details.",
+      },
+      {
+        keywords: ["columbus", "product", "software product"],
+        answer:
+          "Columbus is our recruiting-firm business solution with modules for candidates, clients, partners, timesheets, and job orders. Learn more on the Products page.",
+      },
+      {
+        keywords: ["outsourc", "onsite", "offshore", "nearshore", "consulting"],
+        answer:
+          "We offer consulting plus on-site, off-site, off-shore, and near-shore outsourcing models. See Solutions for how each works.",
+      },
+    ],
+    fallbackMessage:
+      "Thanks for your message! For anything specific, please use the Contact page or email info@dbconinc.com — our team will respond promptly.",
+  },
 };

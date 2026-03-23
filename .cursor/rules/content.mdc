@@ -29,6 +29,7 @@ alwaysApply: false
 | Contact details | `company.contact`       |
 | SEO metadata    | `seo`                   |
 | Navigation      | `navigation[]`          |
+| Chat assistant | `chatbot` (welcome, suggestions, `faqs[]` with `keywords` + `answer`) |
 
 ## Adding a New Service
 ```ts

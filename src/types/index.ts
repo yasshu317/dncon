@@ -127,4 +127,13 @@ export interface SiteConfig {
     keywords: string[];
     ogImage?: string;
   };
+  /** Simple rule-based assistant (keywords → answers). Edit in site.config.ts */
+  chatbot: {
+    title: string;
+    placeholder: string;
+    welcomeMessage: string;
+    suggestions: string[];
+    faqs: { keywords: string[]; answer: string }[];
+    fallbackMessage: string;
+  };
 }

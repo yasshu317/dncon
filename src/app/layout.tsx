@@ -5,6 +5,7 @@ import { siteConfig } from "@/config/site.config";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import NeuralBackground from "@/components/ui/NeuralBackground";
+import ChatWidget from "@/components/ui/ChatWidget";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
@@ -31,6 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Header />
           <main className="pt-16">{children}</main>
           <Footer />
+          <ChatWidget />
         </div>
       </body>
     </html>
